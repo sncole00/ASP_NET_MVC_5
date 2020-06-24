@@ -1,0 +1,25 @@
+﻿@model IEnumerable<OdeToFood.Data.Models.Restaurant>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <div>The number of restaurants is @Model.Count()<span>.</span> </div>
+
+    <div>Hello, world.</div>
+</div>
+
+@*  
+    The following code was used early in the development of this Web Application.  But
+    later in the course, the instructor chose to delete it; instead, the list of restaurants
+    is displayed in its own page under the "Restaurants" tab.
+
+    <ul>
+        @foreach (var restaurant in Model)
+        {
+            <li>@restaurant.Name</li>
+        }
+    </ul>
+*@
