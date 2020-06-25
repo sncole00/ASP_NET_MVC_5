@@ -5,3 +5,33 @@
 
 <h2>Razor Demo</h2>
 
+@*
+    Illustrate how to introduce explicit text via "@:".
+*@
+@for (var iX = 1; iX < 4; ++iX)
+{
+    @:instance @iX
+    <br />
+}
+
+@{
+    var xyz = 30;
+    @xyz <span> </span> @(xyz+5)
+    <br />
+} 
+@*
+    Explicit instances of '@' in the output:  Razor recognizes
+    e-mail addresses.  If you need to append - after the email
+    address - some expression that depends on C#, enclose that
+    expression in parentheses. (Otherwise, razor misinterprets.)
+
+    '@@' can be used to write '@' into output stream.
+*@
+<br />
+@for (var j = 20; j < 21; ++j)
+{
+    @:sncole@comcast.net@j @@abcde<br />   @* results in an error *@
+    @:sncole@comcast.net@(j) @@abcde
+    <br />
+    @* parentheses fix the problem*@
+}
