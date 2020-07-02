@@ -83,8 +83,9 @@ namespace OdeToFood.Web.Controllers
         public ActionResult Edit(Restaurant restaurant) // 2nd of action-item pair
         {
             if (ModelState.IsValid)
-            {
+            {   
                 db.Update(restaurant);
+                TempData["Message"] = "You have saved the restaurant changes.";
                 return RedirectToAction("Details", new { id = restaurant.Id });
                 // The 2nd argument is an object of an anonymous type that has an 'id' property.
             }
